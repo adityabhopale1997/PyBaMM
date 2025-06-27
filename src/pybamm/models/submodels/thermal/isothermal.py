@@ -21,6 +21,9 @@ class Isothermal(BaseThermal):
     def __init__(self, param, options=None, x_average=False):
         super().__init__(param, options=options, x_average=x_average)
 
+        # Placeholder: Heat capacity not used in isothermal model but available in param
+        self.heat_capacity = getattr(param, "heat_capacity", None)
+
     def get_fundamental_variables(self):
         # Set the x-averaged temperature to the ambient temperature, which can be
         # specified as a function of space (y, z) only and time
